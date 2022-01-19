@@ -1,0 +1,20 @@
+{% extends "base/base.html"%}
+
+{% block content %}
+    
+    {% if edad >= 18 %}
+    <h2>Puedes jugar porque eres mayor de edad y tu edad es {{edad}} años</h2>
+    <h2>Modo dificil</h3>
+    {% for fila in range(sudoku.shape[0])  %}
+    <p>
+    {% for col in range(sudoku.shape[1])  %}
+    {{sudoku[fila][col]}}
+    {% endfor %}
+    </p>
+    {% endfor %}
+
+    {% else %}
+    <h2>NO puedes jugar porque eres menor de edad y tu edad es {{edad}} años</h12>
+    {% endif %}
+
+{% endblock %}
