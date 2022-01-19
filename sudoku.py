@@ -16,15 +16,15 @@ a = parsemap("sudoku1.txt")
 m, n = a.shape
 
 #posibilidades
-def posibilidad (fila, columna, numero, a):
+def posibilidad (fila, columna, numero, sudoku):
      #Chequeando si el numero aparece en la fila
     for i in range (0,9):
-        if a[fila][i] == numero:
+        if sudoku[fila][i] == numero:
             return False
 
     #chequeando si el numero aparece en la columna
     for i in range (0,9):
-        if a[i][columna] == numero:
+        if sudoku[i][columna] == numero:
             return False
 
     #chequear si esta en el cuadro de 3x3
@@ -35,25 +35,25 @@ def posibilidad (fila, columna, numero, a):
     for i in range (0,3):
         for j in range(0,3):
             #x y y, es la posicion inicial (sumando i chequea los otros 2):
-            if a[x+i][y+j] == numero:
+            if sudoku[x+i][y+j] == numero:
                 return False
     return True
 
 # solucion
-def sol(sodoku):
+def sol(sudoku):
+    solucion = sudoku.copy()
     #verificar que no tenga valor la casilla, si no tiene valor es 0
     for x in range(m):
         for y in range(n):
-            if sodoku[x][y] == 0:
+            if solucion[x][y] == 0:
                 #prueba valores de 1-9, usando la funcion posibilidad, lo llena y si hay un punto que no puede avanzar mas
                 #usa la recursividad para regresar y probar otros valores, hasta encontrar la solucion
                 for valor in range (1,10):
-                    if posibilidad(x, y, valor, sodoku):
-                        sodoku[x][y] = valor
-                        sol(sodoku)
-                        sodoku[x][y] = 0
-                return
-    print(sodoku)
-    return
+                    if posibilidad(x, y, valor, sudoku):
+                        solucion[x][y] = valor
+                        sol(solucion)
+                        solucion[x][y] = 0
+    #print(sudoku)
+    return solucion
 
-sol(a)
+#sol(a)
