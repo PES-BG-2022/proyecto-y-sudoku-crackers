@@ -12,7 +12,7 @@ def parsemap(filename: str):
         energymap.append(row)
     return np.array(energymap)
     
-a = parsemap("sodoku1.txt")
+a = parsemap("sudoku1.txt")
 m, n = a.shape
 
 #posibilidades
