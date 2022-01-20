@@ -15,6 +15,11 @@ def parsemap(filename: str):
 a = parsemap("sudoku1.txt")
 m, n = a.shape
 
+#imprimir sodoku
+def imprimir(a):
+    for l in a:
+        print(l)
+
 #posibilidades
 def posibilidad (fila, columna, numero, a):
      #Chequeando si el numero aparece en la fila
@@ -50,10 +55,18 @@ def sol(sodoku):
                 for valor in range (1,10):
                     if posibilidad(x, y, valor, sodoku):
                         sodoku[x][y] = valor
-                        sol(sodoku)
+                        solucionador = sol(sodoku)
+                        if solucionador:
+                            return True
                         sodoku[x][y] = 0
-                return
-    print(sodoku)
-    return
+                return False
+    #print(sodoku)
+    return True
 
-sol(a)
+def final():
+    sol(a)
+    #imprimir(a)
+    #type(a)
+    return a
+
+final()
