@@ -14,6 +14,14 @@ def parsemap(filename: str):
     
 a = parsemap("sudoku1.txt")
 m, n = a.shape
+
+
+#imprimir sodoku
+def imprimir(a):
+    for l in a:
+        print(l)
+
+
 #posibilidades
 def posibilidad (fila, columna, numero, a):
      #Chequeando si el numero aparece en la fila
@@ -43,11 +51,21 @@ def sol(sudoku):
                 #prueba valores de 1-9, usando la funcion posibilidad, lo llena y si hay un punto que no puede avanzar mas
                 #usa la recursividad para regresar y probar otros valores, hasta encontrar la solucion
                 for valor in range (1,10):
-                    if posibilidad(x, y, valor, sudoku):
-                        sudoku[x][y] = valor
-                        sol(sudoku)
-                        sudoku[x][y] = 0
-                return
-    print(sudoku)
-    return
-sol(a)
+
+                    if posibilidad(x, y, valor, sodoku):
+                        sodoku[x][y] = valor
+                        solucionador = sol(sodoku)
+                        if solucionador:
+                            return True
+                        sodoku[x][y] = 0
+                return False
+    #print(sodoku)
+    return True
+
+def final():
+    sol(a)
+    #imprimir(a)
+    #type(a)
+    return a
+
+final()
