@@ -36,27 +36,27 @@ def posibilidad (fila, columna, numero, sudoku):
     return True
 
 # solucion
-def sol(sudoku):
+def sol(sudoku : np.array):
+    solucion = sudoku.copy()
+    m=solucion.shape[0]
+    n=solucion.shape[1]
     #verificar que no tenga valor la casilla, si no tiene valor es 0
-    m=sudoku.shape[0]
-    n=sudoku.shape[1]
-
-
     for x in range(m):
         for y in range(n):
-            if sudoku[x][y] == 0:
+            if solucion[x][y] == 0:
                 #prueba valores de 1-9, usando la funcion posibilidad, lo llena y si hay un punto que no puede avanzar mas
                 #usa la recursividad para regresar y probar otros valores, hasta encontrar la solucion
                 for valor in range (1,10):
-                    if posibilidad(x, y, valor, sudoku):
-                        sudoku[x][y] = valor
-                        sol(sudoku)
-                        sudoku[x][y] = 0
-                return
-    print(sudoku)
-    return
+                    if posibilidad(x, y, valor, solucion):
+                        solucion[x][y] = valor
+                        sol(solucion)
+                        solucion[x][y] = 0
+                    else: return
+                
+    print(solucion)
+    return solucion
 
-def resolver(filename):
+def resolver(filename:str):
     sudoku = parsemap(filename)
     solucion = sol(sudoku)
 

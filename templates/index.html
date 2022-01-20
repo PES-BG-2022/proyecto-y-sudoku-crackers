@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku</title>
+</head>
+<body>
+    <h1>Sudoku cracker</h1>
+
+    <h4>{{nombre}}</h4>
+
+    <h2>Sudoku</h2>
+    {% for fila in range(sudoku.shape[0])  %}
+    <p>
+    {% for col in range(sudoku.shape[1])  %}
+    {{sudoku[fila][col]}}
+    {% endfor %}
+    </p>
+    {% endfor %}
+    
+    <h2>Solucion</h2>
+    {% for fila in range(solucion.shape[0])  %}
+    <p>
+    {% for col in range(solucion.shape[1])  %}
+    {{solucion[fila][col]}}
+    {% endfor %}
+    </p>
+    {% endfor %}
+
+    
+
+
+
+</body>
+</html>
