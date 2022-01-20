@@ -35,19 +35,19 @@ def posibilidad (fila, columna, numero, a):
                 return False
     return True
 # solucion
-def sol(sodoku):
+def sol(sudoku):
     #verificar que no tenga valor la casilla, si no tiene valor es 0
     for x in range(m):
         for y in range(n):
-            if sodoku[x][y] == 0:
+            if sudoku[x][y] == 0:
                 #prueba valores de 1-9, usando la funcion posibilidad, lo llena y si hay un punto que no puede avanzar mas
                 #usa la recursividad para regresar y probar otros valores, hasta encontrar la solucion
                 for valor in range (1,10):
-                    if posibilidad(x, y, valor, sodoku):
-                        sodoku[x][y] = valor
-                        sol(sodoku)
-                        sodoku[x][y] = 0
+                    if posibilidad(x, y, valor, sudoku):
+                        sudoku[x][y] = valor
+                        sol(sudoku)
+                        sudoku[x][y] = 0
                 return
-    print(sodoku)
+    print(sudoku)
     return
 sol(a)
