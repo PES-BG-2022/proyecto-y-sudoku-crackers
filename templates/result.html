@@ -1,8 +1,3 @@
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,10 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 
-<!-- A: {{a}} <br>
-{% for x in b %}
-{{x}}:{{b[x]}} <br>
-{% endfor %} -->
+
 
     <h1>Sudoku cracker</h1>
       
@@ -66,12 +58,11 @@
         </table>
         </div>
         <div class="col-sm">
-          <h2>Solución</h2>
-          <div class="col-sm">
             <h2>Solución</h2>
             {% from "_macro.html" import show_sudoku%}
             {{ show_sudoku(solucion) }}  
         </div>
       </div>
     </div>
-
+</body>
+</html>

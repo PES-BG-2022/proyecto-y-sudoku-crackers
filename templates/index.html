@@ -71,7 +71,6 @@
             
             {% for b in form.a2 %}
             <tr>
-            
               <!-- {{b.form.b1}}  {{ b.form.b1(class_="form-control") }}
               {{b.form.b2}}  {{ b.form.b2(class_="form-control") }}
               {{b.form.b3}}  {{ b.form.b3(class_="form-control") }}
@@ -81,8 +80,7 @@
               {{b.form.b7}}  {{ b.form.b7(class_="form-control") }}
               {{b.form.b8}}  {{ b.form.b8(class_="form-control") }}
               {{b.form.b9}}  {{ b.form.b9(class_="form-control") }} -->
-    
-              <td>{{ b.form.b1(class_="form-control")}} </td>
+              <td>{{b.form.b1(class_="form-control")}} </td>
               <td>{{b.form.b2(class_="form-control")}}</td>
               <td>{{b.form.b3(class_="form-control")}}</td>
               <td>{{b.form.b4(class_="form-control")}}</td>
@@ -94,9 +92,7 @@
             </tr>
             {% endfor %}
           </table>
-                
-            {{ form.s }}
-            
+          {{ form.s }}
           </form>
         </div>
       </div>

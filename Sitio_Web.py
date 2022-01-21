@@ -19,7 +19,7 @@ def index():
 
 @app.route("/r",methods = ['POST'])
 def r():
-    a=request.form["a1"]
+    #a=request.form["a1"]
     b=request.form
     br = { x:b[x] for x in b if "a2-" in x }
     
@@ -45,7 +45,7 @@ def r():
 
     #print(entrada)
 
-    return render_template("result.html", a = a, b=br, sudoku = sudoku, solucion = solucion)
+    return render_template("result.html",  b=br, sudoku = sudoku, solucion = solucion)#, a=a)
  
 #funciona con esta URL: http://127.0.0.1:5000/params?params1=Juan_Manuel&params2=Jimenez_Cruz
 #?params=1
