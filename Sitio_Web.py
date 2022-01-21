@@ -42,10 +42,8 @@ def r():
     # print[entrada]
     
 
-
     #print(entrada)
-
-    return render_template("result.html", a = a, b=br, sudoku = sudoku, solucion = solucion)
+    return render_template("result.html",  b=br, sudoku = sudoku, solucion = solucion, a=a)
  
 #funciona con esta URL: http://127.0.0.1:5000/params?params1=Juan_Manuel&params2=Jimenez_Cruz
 #?params=1
