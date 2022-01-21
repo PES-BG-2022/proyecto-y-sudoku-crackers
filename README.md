@@ -37,3 +37,9 @@ El presente proyecto tiene como objetivo que el estudiante conozca nuevos paquet
 - El nivel de interés que despierta el proyecto puede ser medido por las consultas que haga el profesor o los estudiantes al final de la exposición.
 - Atender a otras indicaciones adicionales por parte del instructor al inicio y durante la presentación. 
 - La fecha de entrega máxima para realizar las confirmaciones será el **jueves 20 de enero de 2022 a las 23:59 horas**.
+
+## Proyecto
+
+El proyecto trata acerca de un solucionador de sudoku 9x9, el cual fue prigramado en Python.
+Adicionalmente a lo visto en el curso, se utiliza Flask para crear la interfaz del juego, donde el usuario puede interactuar, esto lo realiza a través de WTForms.
+El objetivo es desarrollar un programa que permita solucionar cualquier sudoku, siguiendo las reglas tradicionales (las cuales se encuentran en la presentación).
