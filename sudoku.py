@@ -62,9 +62,10 @@ def get_solucion(filename: str):
     return(sol(get_sudoku(filename))[1])
 
 if __name__ == "__main__": 
-    #sudoku = parsemap("sodokudificil1.txt")
-    #print(sudoku)
-    #solucion =  sol(sudoku)[1]
-    #print(solucion)
-    print(get_sudoku("sudoku1.txt"))
-    print(get_solucion("sudoku1.txt"))
+    #sudoku_text = "sudoku1.txt"
+    sudokus = ["sudoku.txt","sudoku1.txt","sudoku2.txt","sudoku3.txt","sudokufacil1.txt","sudokufacil2.txt","sudokufacil3.txt","sudokuint1.txt","sudokuint2.txt","sudokuint3.txt","sudokudificil1.txt","sudokudificil2.txt","sudokudificil3.txt"]
+    
+    for sudoku_text in sudokus:
+        print(get_sudoku(sudoku_text))
+        print(get_solucion(sudoku_text))
+        print("\n")

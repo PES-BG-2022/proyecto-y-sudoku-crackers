@@ -106,9 +106,9 @@ def escoger_posibilidad_unica2(sudoku):
     for x in range(temp_solucion.shape[0]):
         for y in range(temp_solucion.shape[1]):
             if len(temp_matriz[x][y])==0 and temp_solucion[x][y]==0:
-                print(f"LA CAGAMOS ({x},{y}) son {temp_matriz[x][y]}")
+                print(f"NO PUEDE SER ({x},{y}) son {temp_matriz[x][y]}")
                 return sudoku
-                #print("LA CAGAMOS")
+                #print("NO PUEDE SER")
             elif len(temp_matriz[x][y])==1 and temp_solucion[x][y]==0: 
                 temp_solucion[x][y] = temp_matriz[x][y][0]
                 print(f"Las posibilidades de ({x},{y})")
@@ -134,9 +134,9 @@ def escoger_posibilidad_unica(sudoku):
     for x in range(temp_solucion.shape[0]):
         for y in range(temp_solucion.shape[1]):
             if len(temp_matriz[x][y])==0 and temp_solucion[x][y]==0:
-                print(f"LA CAGAMOS ({x},{y}) son {temp_matriz[x][y]}")
+                print(f"NO PUEDE SER ({x},{y}) son {temp_matriz[x][y]}")
                 return sudoku
-                #print("LA CAGAMOS")
+                #print("NO PUEDE SER")
             elif len(temp_matriz[x][y])==1 and temp_solucion[x][y]==0: 
                 temp_solucion[x][y] = temp_matriz[x][y][0]
                 print(f"Las posibilidades de ({x},{y})")
