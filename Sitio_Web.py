@@ -7,7 +7,6 @@ import forms
 
 app = Flask(__name__)
 
-
 @app.route('/')#, methods=['GET','POST'])
 def index():
     form = forms.A()
@@ -32,7 +31,6 @@ def r():
     #QUEDA PENDIENTE TERMINAR CON ESTE LISTADO PARA CORROBORAR SOLUCION
 
     return render_template("result.html",  b=br, sudoku = sudoku, solucion = solucion, a=a)
- 
 
 if __name__ == '__main__':
     #AQUI SE SELECCIONA QUE SUDOKU RESOLVER
