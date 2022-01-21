@@ -28,21 +28,16 @@
       Realizado por: Juan Manuel Jiménez Cruz y Karla Gabriela Gonzalez Grajeda<br>
 
     </h6>
-
-    <br>
-    {{ form.a1.label }} {{form.a1()}} <br>
-    <br>
+    <form action="/r" method="POST" role="form">
+      <br>
+      {{ form.a1.label }} {{form.a1()}} <br>
+      <br>
       
     
 
     <h5><b>Instrucciones:</b>  A la Izquierda se le presenta un sudoku el cual debe de responder con los espacios mostrados al lado derecho, al ingresar enviar podrá ver la solución del Sudoku</h5>
     
 
-    <div class="container-fluid">
-      
-    </div>
-
-    
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm">
@@ -64,7 +59,8 @@
         </div>
         <div class="col-sm">
           <h2>Rellene en este espacio</h2>
-          <form action="/r" method="POST" role="form">
+          
+            
             <table class="table table-hover table-bordered", style="text-align: center;">
     
             
@@ -91,10 +87,12 @@
               <td>{{b.form.b9(class_="form-control")}}</td>
             </tr>
             {% endfor %}
+            
           </table>
           {{ form.s }}
-          </form>
+          
         </div>
       </div>
     </div>
+  </form>
 
