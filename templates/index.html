@@ -21,18 +21,45 @@
 
     <h4>{{nombre}}</h4>
 
+    <form action="/r" method="POST" role="form">
+      {{ form.a1.label }} {{form.a1()}} <br>
+      {% for b in form.a2 %}
+
+        {{b.form.b1.label}}  {{b.form.b1}}
+        {{b.form.b2.label}}  {{b.form.b2}}
+        {{b.form.b3.label}}  {{b.form.b3}}<br>
+
+      {% endfor %}
+
+      {{ form.s }}
+      
+    </form>
+
+    
     <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm">
-            <h2>Sudoku</h2>
-            <!-- aqui va el sudoku -->
-            {% from "_macro.html" import show_sudoku%}
-            {{ show_sudoku(sudoku) }}
-          </div>
-          <div class="col-sm">
-            <h2>Solución</h2>
-            {% from "_macro.html" import show_sudoku%}
-            {{ show_sudoku(solucion) }}  
-          </div>
+      <div class="row">
+        <div class="col-sm">
+          <h2>Sudoku</h2>
+          <table class="table table-hover table-bordered", style="text-align: center;">
+            {% for fila in range(sudoku.shape[0])  %}
+            
+            <tr>
+            {% for col in range(sudoku.shape[1])  %}
+            <td>
+            {% from "_macro.html" import render_field %}
+
+            <input  type="text" style="text-align: center" class="form-control" value="{{sudoku[fila][col]}}" >
+            </td> 
+            {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        </div>
+        <div class="col-sm">
+          <h2>Solución</h2>
+          {% from "_macro.html" import show_sudoku%}
+          {{ show_sudoku(solucion) }}  
         </div>
       </div>
+    </div>
+

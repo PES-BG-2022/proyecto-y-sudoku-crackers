@@ -5,6 +5,7 @@
     <tr>
     {% for col in range(sudoku.shape[1])  %}
     <td>
+        
     <!-- {{sudoku[fila][col]}} -->
     <input  type="text" style="text-align: center" class="form-control" value="{{sudoku[fila][col]}}" >
     </td>
@@ -14,3 +15,6 @@
 </table>
 {% endmacro %}
 
+{% macro render_field(field) %}
+    <dd> {{field(**kwargs)|safe}}
+{% endmacro %}
