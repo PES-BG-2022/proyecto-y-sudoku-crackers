@@ -13,12 +13,6 @@ def parsemap(filename: str):
     return np.array(energymap)
     
 
-#imprimir sudoku
-def imprimir(a):
-    for l in a:
-        print(l)
-
-
 #posibilidades
 def posibilidad (fila, columna, numero, a):
      #Chequeando si el numero aparece en la fila
@@ -61,9 +55,16 @@ def sol(sudoku):
     #print(sudoku)
     return (True,sudoku)
 
+def get_sudoku(filename: str):
+    return parsemap(filename)
+
+def get_solucion(filename: str):
+    return(sol(get_sudoku(filename))[1])
 
 if __name__ == "__main__": 
-    sudoku = parsemap("sodokudificil1.txt")
-    print(sudoku)
-    solucion =  sol(sudoku)[1]
-    print(solucion)
+    #sudoku = parsemap("sodokudificil1.txt")
+    #print(sudoku)
+    #solucion =  sol(sudoku)[1]
+    #print(solucion)
+    print(get_sudoku("sudoku1.txt"))
+    print(get_solucion("sudoku1.txt"))

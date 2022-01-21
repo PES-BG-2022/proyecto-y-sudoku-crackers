@@ -1,37 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
+    
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Sudoku</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
+
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>
+        function botonsudoku(id) {
+          document.getElementById(id).value =  "XD";
+        }
+        </script>
     <h1>Sudoku cracker</h1>
 
     <h4>{{nombre}}</h4>
 
-    <h2>Sudoku</h2>
-    {% for fila in range(sudoku.shape[0])  %}
-    <p>
-    {% for col in range(sudoku.shape[1])  %}
-    {{sudoku[fila][col]}}
-    {% endfor %}
-    </p>
-    {% endfor %}
-
-        
-    <h2>Solucion</h2>
-    {% for fila in range(solucion.shape[0])  %}
-    <p>
-    {% for col in range(solucion.shape[1])  %}
-    {{solucion[fila][col]}}
-    {% endfor %}
-    </p>
-    {% endfor %}
-
-
-
-
-</body>
-</html>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm">
+            <h2>Sudoku</h2>
+            <!-- aqui va el sudoku -->
+            {% from "_macro.html" import show_sudoku%}
+            {{ show_sudoku(sudoku) }}
+          </div>
+          <div class="col-sm">
+            <h2>Solución</h2>
+            {% from "_macro.html" import show_sudoku%}
+            {{ show_sudoku(solucion) }}  
+          </div>
+        </div>
+      </div>

@@ -3,13 +3,15 @@ from flask import request
 from flask import render_template
 import numpy as np
 import sudoku as sud
+import form
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def index():
-    return render_template("index.html", nombre = name, edad = age, sudoku = sudoku, solucion = solucion)
+    #sudoku_form=form.sudokuform
+    return render_template("index.html", nombre = name, edad = age, sudoku = sudoku, solucion = solucion)#, form = sudoku_form)
 
  
 #funciona con esta URL: http://127.0.0.1:5000/params?params1=Juan_Manuel&params2=Jimenez_Cruz
@@ -25,6 +27,6 @@ if __name__ == '__main__':
     name = "Juan Manuel"
     age = 25
 
-    sudoku   = sud.parsemap("sudoku3.txt")
-    solucion = sud.resolver("sudoku3.txt")
+    sudoku   = sud.get_sudoku("sudoku3.txt")
+    solucion = sud.get_solucion("sudoku3.txt")
     app.run(debug=True)
