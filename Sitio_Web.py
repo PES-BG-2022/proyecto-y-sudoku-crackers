@@ -15,7 +15,7 @@ def index():
     # if request.method == 'POST':
     #     print(A_form.a2.)
     #sudoku_form=form.sudokuform
-    return render_template("index.html", nombre = name, edad = age, sudoku = sudoku, solucion = solucion,form = form)
+    return render_template("index.html", sudoku = sudoku, solucion = solucion,form = form)
 
 @app.route("/r",methods = ['POST'])
 def r():
@@ -45,7 +45,7 @@ def r():
 
     #print(entrada)
 
-    return render_template("result.html", a = a, b=br)
+    return render_template("result.html", a = a, b=br, sudoku = sudoku, solucion = solucion)
  
 #funciona con esta URL: http://127.0.0.1:5000/params?params1=Juan_Manuel&params2=Jimenez_Cruz
 #?params=1
@@ -57,9 +57,6 @@ def r():
 
 
 if __name__ == '__main__':
-    name = "Juan Manuel"
-    age = 25
-
     sudoku   = sud.get_sudoku("sudoku3.txt")
     solucion = sud.get_solucion("sudoku3.txt")
     app.run(debug=True)
