@@ -22,7 +22,29 @@ def r():
     a=request.form["a1"]
     b=request.form
     br = { x:b[x] for x in b if "a2-" in x }
+    
     print(br)
+    br_list = []
+    contador = 0
+    for x in br:
+        br_list.append(br[x])
+        print(br[x])
+        contador+=1
+    print(br_list)
+    print(len(br_list))
+
+    # entrada = []
+    # for j in range(9):
+    #     row = []
+    #     for i in range(9):
+    #         row.append(br_list[i+9*j])
+    #     entrada.append(row)
+    # print[entrada]
+    
+
+
+    #print(entrada)
+
     return render_template("result.html", a = a, b=br)
  
 #funciona con esta URL: http://127.0.0.1:5000/params?params1=Juan_Manuel&params2=Jimenez_Cruz

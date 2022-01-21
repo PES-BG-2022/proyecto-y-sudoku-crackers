@@ -18,22 +18,20 @@
         }
         </script>
     <h1>Sudoku cracker</h1>
-
-    <h4>{{nombre}}</h4>
-
-    <form action="/r" method="POST" role="form">
-      {{ form.a1.label }} {{form.a1()}} <br>
-      {% for b in form.a2 %}
-
-        {{b.form.b1.label}}  {{b.form.b1}}
-        {{b.form.b2.label}}  {{b.form.b2}}
-        {{b.form.b3.label}}  {{b.form.b3}}<br>
-
-      {% endfor %}
-
-      {{ form.s }}
       
-    </form>
+    <h6>{{nombre}}</h6>
+    <br>
+    {{ form.a1.label }} {{form.a1()}} <br>
+    <br>
+      
+    
+
+    <h5><b>Instrucciones:</b>  A la Izquierda se le presenta un sudoku el cual debe de responder con los espacios mostrados al lado derecho, al ingresar enviar podrá ver su respuesta y la solución del Sudoku</h5>
+    
+
+    <div class="container-fluid">
+      
+    </div>
 
     
     <div class="container-fluid">
@@ -56,9 +54,41 @@
         </table>
         </div>
         <div class="col-sm">
-          <h2>Solución</h2>
-          {% from "_macro.html" import show_sudoku%}
-          {{ show_sudoku(solucion) }}  
+          <h2>Rellene en este espacio</h2>
+          <form action="/r" method="POST" role="form">
+            <table class="table table-hover table-bordered", style="text-align: center;">
+    
+            
+            
+            {% for b in form.a2 %}
+            <tr>
+            
+              <!-- {{b.form.b1}}  {{ b.form.b1(class_="form-control") }}
+              {{b.form.b2}}  {{ b.form.b2(class_="form-control") }}
+              {{b.form.b3}}  {{ b.form.b3(class_="form-control") }}
+              {{b.form.b4}}  {{ b.form.b4(class_="form-control") }}
+              {{b.form.b5}}  {{ b.form.b5(class_="form-control") }}
+              {{b.form.b6}}  {{ b.form.b6(class_="form-control") }}
+              {{b.form.b7}}  {{ b.form.b7(class_="form-control") }}
+              {{b.form.b8}}  {{ b.form.b8(class_="form-control") }}
+              {{b.form.b9}}  {{ b.form.b9(class_="form-control") }} -->
+    
+              <td>{{ b.form.b1(class_="form-control")}} </td>
+              <td>{{b.form.b2(class_="form-control")}}</td>
+              <td>{{b.form.b3(class_="form-control")}}</td>
+              <td>{{b.form.b4(class_="form-control")}}</td>
+              <td>{{b.form.b5(class_="form-control")}}</td>
+              <td>{{b.form.b6(class_="form-control")}}</td>
+              <td>{{b.form.b7(class_="form-control")}}</td>
+              <td>{{b.form.b8(class_="form-control")}}</td>
+              <td>{{b.form.b9(class_="form-control")}}</td>
+            </tr>
+            {% endfor %}
+          </table>
+                
+            {{ form.s }}
+            
+          </form>
         </div>
       </div>
     </div>
